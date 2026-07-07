@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        remainingTime -= Time.deltaTime;
+        remainingTime += Time.deltaTime;
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
 
