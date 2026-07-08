@@ -1,4 +1,5 @@
 using UnityEngine;
+
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
@@ -78,11 +79,13 @@ public class MainMenuController : MonoBehaviour
     {
         if (mainPanel != null) mainPanel.SetActive(false);
         if (optionsPanel != null) optionsPanel.SetActive(true);
+        if (creditsPanel != null) creditsPanel.SetActive(false);
     }
 
     void ShowCredits()
     {
         if (mainPanel != null) mainPanel.SetActive(false);
+        if (optionsPanel != null) optionsPanel.SetActive(false);
         if (creditsPanel != null) creditsPanel.SetActive(true);
     }
 
@@ -111,10 +114,10 @@ public class MainMenuController : MonoBehaviour
 
     void OnQuit()
     {
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-        #else
+#else
         Application.Quit();
-        #endif
+#endif
     }
 }
